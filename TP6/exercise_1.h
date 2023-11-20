@@ -15,7 +15,7 @@ void exercise_1() {
 	printf("\t\t***************************\n\n");
 	
 	FILE * archivo;
-    char linea[50];
+    char linea[100];
 
     archivo = fopen("prueba.txt", "r");
 
@@ -24,8 +24,9 @@ void exercise_1() {
         return;
     }
     
-	while (getline(
-       	printf("%s\n", linea);
+	while (fgets(linea, 100, archivo) != NULL){
+       	printf("%s", linea);
    	}
+   	
    	fclose(archivo);
 }
