@@ -24,6 +24,7 @@
 	La carga de datos finaliza cuando se ingresa un DNI = 0.
 */
 float calcularTotal(int tipoTarifa, int horas);
+int guardarDatos(int dni, int tipoTarifa);
 
 int main(int argc, char *argv[]) {
 	
