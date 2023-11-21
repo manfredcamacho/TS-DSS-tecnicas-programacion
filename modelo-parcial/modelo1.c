@@ -15,16 +15,16 @@
 	(1) Auto 50$ la hora.
 	(2) Moto 25$ la hora.
 	
-	Se deberá realizar una función a la cual se le pasen los datos 
-	mencionados anteriormente, el programa deberá calcular el total a pagar,
+	A- Se deberá realizar una función a la cual se le pasen los datos 
+	mencionados anteriormente, el programa deberá calcular el total a pagar, 
 	informarlo y luego guardar en un archivo los siguientes datos: 
 	
-	Dni, tipo 
+	Dni, tipo tarifa (1-2), total.
 	
 	La carga de datos finaliza cuando se ingresa un DNI = 0.
 */
 float calcularTotal(int tipoTarifa, int horas);
-int guardarDatos(int dni, int tipoTarifa);
+int guardarDatos(int dni, int tipoTarifa, float total);
 
 int main(int argc, char *argv[]) {
 	
@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
 		
 		printf("\nEL total a pagar es $%.2f\n", total);
 		
-		guardarDatos(dni, tipoTarifa);
+		guardarDatos(dni, tipoTarifa, total);
 		
 		printf("\nDNI (0 para Salir): ");
 		scanf("%d", &dni);
@@ -60,7 +60,7 @@ float calcularTotal(int tipoTarifa, int horas){
 		return 25 * horas;
 }
 
-int guardarDatos(int dni, int tipoTarifa){
+int guardarDatos(int dni, int tipoTarifa, float total){
 	FILE *archivo = fopen("estacionamiento.txt", "a");
 	
 	if(archivo == NULL){
@@ -68,10 +68,7 @@ int guardarDatos(int dni, int tipoTarifa){
 		return 1;
 	}
 	
-	if(tipoTarifa == 1)
-		fprintf(archivo, "%d\tAuto\n", dni);
-	else
-		fprintf(archivo, "%d\tMoto\n", dni);
+	fprintf(archivo, "%d\t%d\t%.2f\n", dni, tipoTarifa, total);
 		
 	fclose(archivo);
 }
