@@ -1,0 +1,5 @@
+8				asado				5 kg
+2				bife				3 kg
+4				lomo				8 kg
+15				paleta				5 kg
+7				nalga				9 kg
