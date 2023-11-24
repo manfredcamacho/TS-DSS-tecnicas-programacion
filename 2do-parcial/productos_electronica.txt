@@ -1,0 +1,7 @@
+Nombre_producto;Precio
+papa;32.00
+pepa;34.00
+titan;0.50
+oro;32.30
+mono;33.33
+plato;9.00
